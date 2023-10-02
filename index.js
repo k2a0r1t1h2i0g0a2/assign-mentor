@@ -12,7 +12,9 @@ app.use(cors());
 app.use(express.json());
 connectDB();
 app.use("/api", stdMenRouter);
-
+app.get("/", function (req, res) {
+  res.send("Welcome to Assign-Mentor");
+});
 app.listen(port, () => {
   console.log("app is listening with", port);
 });
